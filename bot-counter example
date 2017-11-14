@@ -77,6 +77,7 @@ bot.on('ready', () => {
 });
 
 bot.on('message', message => {
+    // personal tweaks for my Discord server
     var content = message.content.toLowerCase();
     if (content.match(/.*i.+stupid.*/)) {
         message.channel.sendMessage("You aren't stupid!");
@@ -99,6 +100,7 @@ bot.on('message', message => {
     } else if (content.startsWith(prefix + "echo")) {
         message.channel.sendMessage('I see you having typed `' + message.content + '`');
     }
+    // main code
     if (message.content.startsWith(prefix) && message.content.length > 1) {
         message.content = message.content.replace(mentionFilter, "");
         var content = message.content.split(" ");
